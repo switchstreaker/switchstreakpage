@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Streak</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #1a1a1a;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Animación de entrada */
+        .entrance-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #1a1a1a;
+            animation: fadeOut 1s ease-in-out 2s forwards;
+            z-index: 1000;
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        .logo {
+            width: 150px; /* Ajusta el tamaño según sea necesario */
+            height: auto;
+            animation: logoFadeIn 1s ease-out, logoScale 1s ease-out 1s;
+        }
+
+        @keyframes logoFadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes logoScale {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .title {
+            font-size: 4em;
+            font-weight: bold;
+            text-transform: uppercase;
+            animation: slideIn 2s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Contenido principal */
+        .main-content {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            opacity: 0;
+            animation: contentFadeIn 1s ease-out 2.5s forwards;
+        }
+
+        @keyframes contentFadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .creator-section {
+            margin: 2rem 0;
+            padding: 2rem;
+            background-color: #2a2a2a;
+            border-radius: 15px;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-right: 2rem;
+            border: 3px solid #00ff88;
+        }
+
+        .bio {
+            line-height: 1.6;
+            max-width: 600px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 2rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #00ff88;
+        }
+
+        h2 {
+            color: #00ff88;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Animación de entrada -->
+    <div class="entrance-animation">
+        <img src="LOGO SWITCH STREAK.png" class="logo" alt="Switch Streak Logo">
+        <h1 class="title">Switch Streak!</h1>
+    </div>
+
+    <!-- Contenido principal -->
+    <main class="main-content">
+        <section class="creator-section">
+            <div class="profile">
+                <img src="LOGO SWITCH STREAK.jpeg" class="profile-img" alt="Switch Streak">
+                <div>
+                    <h2>Sobre Switch Streak</h2>
+                    <p class="bio">
+                        Bienvenidos a Switch Streak 
+                    </p>    
+                    <p>    
+                        Tu fuente definitiva de noticias, análisis y todo lo relacionado con Nintendo Switch. En este canal, te traemos las últimas novedades de la consola híbrida más popular, explorando desde los lanzamientos más esperados hasta los secretos ocultos en tus juegos favoritos. ¡Mantente al día con avances exclusivos, reseñas detalladas y guías épicas para mejorar tu experiencia Nintendera!
+
+                        Únete a la comunidad de gamers apasionados por Nintendo y no te pierdas nuestras transmisiones en vivo, análisis de juegos y cobertura de eventos como Nintendo Direct.
+                    </p>
+                </div>
+            </div>
+
+            <h2>Redes Sociales</h2>
+            <div class="social-links">
+                <a href="https://www.twitch.tv/switch_streak" target="_blank"><i class="fab fa-twitch"></i></a>
+                <a href="https://www.youtube.com/@SwitchStreak" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://x.com/SwitchStreak" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/switch_streak/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@switch_streak" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://discord.com/invite/6e79Z5Vqcf" target="_blank"><i class="fab fa-discord"></i></a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Esperar a que termine la animación para ocultar el overlay
+        setTimeout(() => {
+            document.querySelector('.entrance-animation').style.display = 'none';
+        }, 2000);
+    </script>
+</body>
+</html>
