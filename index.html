@@ -36,60 +36,39 @@
         }
 
         @keyframes fadeOut {
-            from {
-                opacity: 1;
-            }
-            to {
-                opacity: 0;
-                visibility: hidden;
-            }
+            from { opacity: 1; }
+            to { opacity: 0; visibility: hidden; }
         }
 
         .logo {
-            width: 150px; /* Ajusta el tamaño según sea necesario */
+            width: 30vw; /* Ajuste dinámico en móviles */
+            max-width: 150px; /* Límite en pantallas grandes */
             height: auto;
             animation: logoFadeIn 1s ease-out, logoScale 1s ease-out 1s;
         }
 
         @keyframes logoFadeIn {
-            from {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
         }
 
         @keyframes logoScale {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.2);
-            }
-            100% {
-                transform: scale(1);
-            }
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
         }
 
         .title {
-            font-size: 4em;
+            font-size: 8vw; /* Ajuste dinámico */
             font-weight: bold;
             text-transform: uppercase;
+            text-align: center;
             animation: slideIn 2s ease-out;
         }
 
         @keyframes slideIn {
-            from {
-                transform: translateY(-100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
 
         /* Contenido principal */
@@ -102,9 +81,7 @@
         }
 
         @keyframes contentFadeIn {
-            to {
-                opacity: 1;
-            }
+            to { opacity: 1; }
         }
 
         .creator-section {
@@ -116,15 +93,16 @@
 
         .profile {
             display: flex;
+            flex-wrap: wrap; /* Permite ajuste en móviles */
             align-items: center;
             margin-bottom: 2rem;
         }
 
         .profile-img {
-            width: 150px;
-            height: 150px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
-            margin-right: 2rem;
+            margin-right: 1rem;
             border: 3px solid #00ff88;
         }
 
@@ -135,13 +113,15 @@
 
         .social-links {
             display: flex;
-            gap: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
             margin-top: 1.5rem;
+            justify-content: center; /* Centrado en móviles */
         }
 
         .social-links a {
             color: white;
-            font-size: 2rem;
+            font-size: 1.8rem;
             transition: color 0.3s ease;
         }
 
@@ -152,6 +132,42 @@
         h2 {
             color: #00ff88;
             margin-bottom: 1rem;
+            text-align: center; /* Alineación en móviles */
+        }
+
+        .video-container {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            max-width: 800px;
+            height: 45vw; /* Proporción dinámica */
+            max-height: 450px;
+            border: none;
+            border-radius: 15px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .title {
+                font-size: 6vw;
+            }
+
+            .profile {
+                display: block; /* Columnas en móviles */
+                text-align: center;
+            }
+
+            .profile-img {
+                margin: 0 auto 1rem;
+            }
+
+            .bio {
+                max-width: 100%;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -170,14 +186,14 @@
                 <div>
                     <h2>Sobre Switch Streak</h2>
                     <p class="bio">
-                        Bienvenidos a Switch Streak 
-                    </p>    
-                    <p>    
-                        Tu fuente definitiva de noticias, análisis y todo lo relacionado con Nintendo Switch. En este canal, te traemos las últimas novedades de la consola híbrida más popular, explorando desde los lanzamientos más esperados hasta los secretos ocultos en tus juegos favoritos. ¡Mantente al día con avances exclusivos, reseñas detalladas y guías épicas para mejorar tu experiencia Nintendera!
-
-                        Únete a la comunidad de gamers apasionados por Nintendo y no te pierdas nuestras transmisiones en vivo, análisis de juegos y cobertura de eventos como Nintendo Direct.
+                        Bienvenidos a Switch Streak, tu fuente definitiva de noticias, análisis y todo lo relacionado con Nintendo Switch. Aquí te traemos las últimas novedades, explorando desde los lanzamientos más esperados hasta los secretos ocultos en tus juegos favoritos.
                     </p>
                 </div>
+            </div>
+
+            <h2>Último Video</h2>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/VIDEO_ID" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
 
             <h2>Redes Sociales</h2>
@@ -193,10 +209,10 @@
     </main>
 
     <script>
-        // Esperar a que termine la animación para ocultar el overlay
         setTimeout(() => {
             document.querySelector('.entrance-animation').style.display = 'none';
         }, 2000);
     </script>
 </body>
 </html>
+
