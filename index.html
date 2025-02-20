@@ -114,6 +114,7 @@
             flex-wrap: wrap; /* Permite ajuste en móviles */
             align-items: center;
             margin-bottom: 2rem;
+            justify-content: center; /* Centrado */
         }
 
         .profile-img {
@@ -127,6 +128,7 @@
         .bio {
             line-height: 1.6;
             max-width: 600px;
+            text-align: center; /* Alineación de texto para móviles */
         }
 
         .social-links {
@@ -205,7 +207,7 @@
             }
 
             .profile {
-                display: block; /* Columnas en móviles */
+                flex-direction: column; /* Cambio de fila a columna en móviles */
                 text-align: center;
             }
 
@@ -216,6 +218,19 @@
             .bio {
                 max-width: 100%;
                 text-align: center;
+            }
+
+            .subscriber-counter {
+                margin-top: 2rem;
+                padding: 20px; /* Más padding para hacer el contador más grande en móviles */
+            }
+
+            .video-container iframe {
+                height: 60vw; /* Mejor altura en móviles */
+            }
+
+            .footer {
+                font-size: 0.9rem;
             }
         }
     </style>
