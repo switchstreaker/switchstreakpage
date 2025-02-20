@@ -175,12 +175,17 @@
             text-align: center;
             background-color: #1a1a1a; /* Fondo negro fuera del contador */
             border-radius: 15px;
-            padding: 10px;
+            padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra para hacer resaltar el contador */
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 250px; /* Ajuste para centrar mejor */
+            height: auto; /* Ajuste para móviles */
+        }
+
+        .subscriber-counter h2 {
+            margin-bottom: 1rem;
         }
 
         .subscriber-counter iframe {
@@ -221,9 +226,8 @@
             }
 
             .subscriber-counter {
-                padding: 20px; /* Más padding para hacer el contador más grande en móviles */
                 margin-top: 2rem;
-                height: auto; /* Ajustamos la altura para que no se vea recortado */
+                padding: 20px; /* Más padding para hacer el contador más grande en móviles */
             }
 
             .subscriber-counter iframe {
@@ -303,3 +307,4 @@
     </script>
 </body>
 </html>
+
