@@ -17,9 +17,23 @@
             background-color: #1a1a1a;
             color: white;
             overflow-x: hidden;
+            background: linear-gradient(-45deg, #1a1a1a, #2a2a2a, #00ff88, #1a1a1a);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
         }
 
-        /* Animación de entrada */
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
         .entrance-animation {
             position: fixed;
             top: 0;
@@ -71,13 +85,17 @@
             to { transform: translateY(0); opacity: 1; }
         }
 
-        /* Contenido principal */
         .main-content {
             padding: 2rem;
             max-width: 1200px;
             margin: 0 auto;
             opacity: 0;
             animation: contentFadeIn 1s ease-out 2.5s forwards;
+            background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
         }
 
         @keyframes contentFadeIn {
@@ -87,7 +105,7 @@
         .creator-section {
             margin: 2rem 0;
             padding: 2rem;
-            background-color: #2a2a2a;
+            background-color: rgba(42, 42, 42, 0.8); /* Fondo semi-transparente */
             border-radius: 15px;
         }
 
@@ -193,7 +211,7 @@
 
             <h2>Último Video</h2>
             <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/VIDEO_ID" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/9iBzmsVvS84?feature=share" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
 
             <h2>Redes Sociales</h2>
@@ -211,8 +229,7 @@
     <script>
         setTimeout(() => {
             document.querySelector('.entrance-animation').style.display = 'none';
-        }, 2000);
+        }, 3000);
     </script>
 </body>
 </html>
-
