@@ -221,16 +221,24 @@
             }
 
             .subscriber-counter {
-                margin-top: 2rem;
                 padding: 20px; /* Más padding para hacer el contador más grande en móviles */
+                margin-top: 2rem;
+                height: auto; /* Ajustamos la altura para que no se vea recortado */
             }
 
-            .video-container iframe {
-                height: 60vw; /* Mejor altura en móviles */
+            .subscriber-counter iframe {
+                width: 100%;
+                max-width: 100%; /* Aseguramos que ocupe todo el ancho disponible */
+                height: auto; /* Deja que el iframe se ajuste */
+                min-height: 150px; /* Establecemos una altura mínima para que se vea bien */
             }
 
             .footer {
                 font-size: 0.9rem;
+            }
+
+            .video-container iframe {
+                height: 60vw; /* Mejor altura en móviles */
             }
         }
     </style>
